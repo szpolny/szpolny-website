@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
+import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import Layout from '../components/Layout/Layout';
 
@@ -12,7 +13,11 @@ function IndexPage() {
         <title>Szymon Polny - Website</title>
       </Helmet>
       <div className={styles.main}>
-        <div className={styles.container}>
+        <motion.div
+          initial={{ x: -200, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          className={styles.container}
+        >
           <h1>
             Hi, my name is
             {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
@@ -29,7 +34,7 @@ function IndexPage() {
               <FaLinkedin />
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </Layout>
   );
