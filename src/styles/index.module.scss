@@ -1,10 +1,30 @@
 .main {
   width: 100%;
-  max-width: 900px;
-  height: 100%;
+  max-width: 1000px;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  .container {
+    transform: translateY(-5vh);
+  }
+
   h1 {
     margin: 0;
-    font-size: 5rem;
+    font-size: 5.8rem;
     font-weight: 900;
+
+    span {
+      color: white;
+    }
+  }
+}
+
+.icons {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  svg {
+    margin-right: 0.7rem;
   }
 }

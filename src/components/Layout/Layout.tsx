@@ -8,7 +8,6 @@ interface LayoutProps {
 function Layout({ children }: LayoutProps) {
   return (
     <div>
-      <div className="topbar">topbar</div>
       <main>{children}</main>
     </div>
   );
