@@ -28,7 +28,7 @@ function IndexPage() {
               <FaGithub />
             </a>
             <a href="https://twitter.com/szpolny">
-              <FaTwitter />
+              <FaTwitter className={styles.twitter} />
             </a>
             <a href="https://www.linkedin.com/in/szymon-polny-9104011a9/">
               <FaLinkedin />
