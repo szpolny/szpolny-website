@@ -21,7 +21,9 @@ function IndexPage() {
           <h1>
             Hi, my name is
             {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
-            <span> Szymon</span> and I&apos;m frontend developer
+            <span className={styles.name}> Szymon</span> and I&apos;m
+            <span className={styles.dev}> frontend</span>
+            <span className={styles.dev}> developer</span>
           </h1>
           <div className={styles.icons}>
             <a href="https://github.com/szpolny">

@@ -11,8 +11,23 @@
     font-size: 5.8rem;
     font-weight: 900;
 
-    span {
+    .name {
       color: white;
+    }
+
+    .dev {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -2%;
+        top: 0;
+        background-color: white;
+        width: 104%;
+        height: 100%;
+        z-index: -1;
+      }
     }
   }
 }
