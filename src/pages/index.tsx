@@ -16,19 +16,22 @@ function IndexPage() {
         <motion.div
           initial={{ x: -200, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          className={styles.container}
+          className="noselect"
         >
           <h1>
             Hi, my name is
             {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
-            <span> Szymon</span> and I&apos;m frontend developer
+            <span className={styles.name}> Szymon</span> and I&apos;m{' '}
+            {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
+            <span className={styles.dev}>frontend</span>{' '}
+            <span className={styles.dev}>developer</span>
           </h1>
           <div className={styles.icons}>
             <a href="https://github.com/szpolny">
               <FaGithub />
             </a>
             <a href="https://twitter.com/szpolny">
-              <FaTwitter />
+              <FaTwitter className={styles.twitter} />
             </a>
             <a href="https://www.linkedin.com/in/szymon-polny-9104011a9/">
               <FaLinkedin />
