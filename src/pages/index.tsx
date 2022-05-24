@@ -16,7 +16,7 @@ function IndexPage() {
         <motion.div
           initial={{ x: -200, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          className={styles.container}
+          className="noselect"
         >
           <h1>
             Hi, my name is
