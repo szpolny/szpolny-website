@@ -8,7 +8,9 @@
     "prettier"
   ],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "react/function-component-definition": "off",
+    "react/prop-types": "off"
   },
   "parserOptions": {
     "project": "./tsconfig.json"

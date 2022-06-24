@@ -1,12 +1,15 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
+import { graphql } from 'gatsby';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import Layout from '../components/Layout/Layout';
 
 import * as styles from '../styles/index.module.scss';
+import BlogList from '../components/BlogList/BlogList';
+import BlogListInterface from '../interfaces/BlogListInterface';
 
-function IndexPage() {
+function IndexPage({ data }: Props) {
   return (
     <Layout>
       <Helmet>
@@ -16,7 +19,7 @@ function IndexPage() {
         <motion.div
           initial={{ x: -200, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          className="noselect"
+          className={`noselect ${styles.content}`}
         >
           <h1>
             Hi, my name is
@@ -39,8 +42,31 @@ function IndexPage() {
           </div>
         </motion.div>
       </div>
+      <BlogList data={data} />
     </Layout>
   );
+}
+
+export const query = graphql`
+  query IndexQuery {
+    allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { published: { eq: true } } }
+    ) {
+      nodes {
+        id
+        excerpt(pruneLength: 250)
+        frontmatter {
+          title
+          date
+        }
+      }
+    }
+  }
+`;
+
+interface Props {
+  data: BlogListInterface;
 }
 
 export default IndexPage;
